@@ -4,7 +4,8 @@ date: 2018-06-06 10:33:25
 tags:
 	- JavaScript
 ---
-{% codeblock %}
+
+```javascript
 dateformat (date, fmt = 'YYYY-MM-DD') {
   if (!date) {
     return ''
@@ -63,4 +64,4 @@ dateformat (date, fmt = 'YYYY-MM-DD') {
   }
   return fmt
 }
-{% endcodeblock %}
+```
