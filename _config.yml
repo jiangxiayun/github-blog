@@ -4,7 +4,7 @@
 
 # Site
 title: iT豆
-subtitle:
+subtitle: 天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。
 description:
 author: JXY
 language: zh-Hans
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: new-vno
+theme: Anisina
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
