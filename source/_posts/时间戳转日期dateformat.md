@@ -3,7 +3,10 @@ title: 时间戳转日期dateformat
 date: 2018-06-06 10:33:25
 tags:
 	- JavaScript
+categories: 常用格式化处理
 ---
+时间戳转日期
+<!-- more -->
 
 ```javascript
 dateformat (date, fmt = 'YYYY-MM-DD') {

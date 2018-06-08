@@ -2,6 +2,7 @@
 title: JS使用getComputedStyle()方法获取CSS属性值
 date: 2018-06-08 10:39:22
 tags: JavaScript
+categories: JS中的小技巧
 ---
 在对网页进行调试的过程中，经常会用到js来获取元素的CSS样式，方法有很多很多，现在仅把我经常用的方法总结如下：
 
