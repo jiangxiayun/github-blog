@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .radial-gradient1 {
+        width: 400px; height: 200px;
+        background: radial-gradient(yellow, red);
+    }
+    .radial-gradient2 {
+        width: 400px; height: 200px;
+        background: radial-gradient(circle, yellow, red);
+        /*如果我们想指定渐变的形状是一个圆形，形状不受外部容器尺寸影响，可以使用circle关键字*/
+    }
+    .radial-gradient3 {
+        width: 400px; height: 200px;
+        background: radial-gradient(circle at 50px 50px, yellow, red);
+        /*起始点位置可以通过at来指定*/
+        /*如果希望渐变是和容器保持一致比例的椭圆，则circle可以缺省，也就是直接radial-gradient(at 50px 50px, yellow, red)也是可以的。*/
+    }
+    .radial-gradient4 {
+        width: 400px; height: 200px;
+        background: radial-gradient(closest-side circle at 50px 50px, yellow, red);
+        /*radial-gradient径向渐变支持4个关键字可以指定渐变终止点位置*/
+        /*closest-side	渐变中心距离容器最近的边作为终止位置。*/
+        /*closest-corner	渐变中心距离容器最近的角作为终止位置。*/
+        /*farthest-side	渐变中心距离容器最远的边作为终止位置。*/
+        /*farthest-corner	渐变中心距离容器最远的角作为终止位置。*/
+    }
+    .radial-gradient5 {
+        width: 200px; height: 200px;
+        border: 1px solid silver;
+        background: radial-gradient(closest-side circle, yellow, orange, red, white);
+        /*如果指定多个颜色，但未指定具体断点的位置，则这些颜色会均匀分配0%~100%的渐变区域*/
+    }
+    .radial-gradient6 {
+        width: 200px; height: 200px;
+        background: radial-gradient(50px 100px ellipse, transparent 40px, yellow 41px, red);
+        /*50px 100px ellipse中第一个数值50px表示横轴半径，100px表示纵轴半径，于是这段语句表示绘制一个长度100px高度200px的椭圆*/
+    }
+    .radial-gradient7 {
+        width: 200px; height: 200px;
+        /*可以把多个径向渐变累加在一起实现某些效果*/
+        background: radial-gradient(50px 100px ellipse, transparent 40px, yellow 41px, red 49px, transparent 50px),
+        radial-gradient(30px circle, red, red 29px, transparent 30px);
+    }
+    .radial-gradient8 {
+        width: 200px; height: 200px;
+        /*配合background-size的尺寸控制和背景重复特性，我们可以实现渐变式的复杂纹理效果*/
+        background: radial-gradient(5px 10px ellipse, transparent 4px, yellow 5px, red 6px, transparent 7px),
+        radial-gradient(3px circle, red, red 3px, transparent 4px);
+        background-size: 25px 25px;
+    }
+    .radial-gradient9 {
+        width: 200px; height: 100px;
+        background: red;
+        position: relative;
+    }
+    .radial-gradient9:after {
+        content: '';
+        position: absolute;
+        height: 10px;
+        left:0 ; right: 0;
+        bottom: -10px;
+        background: radial-gradient(20px 15px ellipse at top, red 10px, transparent 11px);
+        background-size: 20px 10px;
+    }
+
+    /*如果想要实现可重复的径向渐变，亦可以使用原生的repeating-radial-gradient()方法，特别适合实现从中心扩散的光波效果。*/
+    .radial-gradient10 {
+        position: relative;
+        width: 262px; height: 262px;
+        border-radius: 50%;
+        background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0, linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%, repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+        background-size: 50% 100%, 100% 50%, 100% 100%;
+    }
+    .radial-gradient10:after {
+        position: absolute;
+        top: 50%; left: 50%;
+        margin: -35px;
+        border: solid 1px #d9a388;
+        width: 68px; height: 68px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px #da5b33, inset 0 0 0 27px #da5b33;
+        background: #b5ac9a;
+        content: '';
+    }
+
+    .radial-gradient11 {
+        width: 100px; height: 100px;
+        border: 50px solid;
+        /*径向渐变不仅可以作为background的背景图，还可以作为border-image的边框图使用*/
+        /*只可惜border-image是无法和border-radius同时生效的*/
+        border-image: radial-gradient(circle, transparent 50px, yellow 51px, red) 50 stretch;
+    }
+</style>
+<body>
+<div class="radial-gradient1"></div>
+<div class="radial-gradient2"></div>
+<div class="radial-gradient3"></div>
+<div class="radial-gradient4"></div>
+<div class="radial-gradient5"></div>
+<div class="radial-gradient6"></div>
+<div class="radial-gradient7">多个径向渐变累加</div>
+<div class="radial-gradient8"></div>
+<div class="radial-gradient9">实现个水波效果</div>
+<div class="radial-gradient10">可重复的径向渐变</div>
+<div class="radial-gradient11"></div>
+</body>
+</html>
