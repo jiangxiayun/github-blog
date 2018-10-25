@@ -1,3 +1,5 @@
+git clone下来后，需要再git clone 主题文件 icarus 到 themes 文件夹
+
   https://hexo.io/zh-cn/
 
   可以在 _config.yml 中修改大部份的配置
